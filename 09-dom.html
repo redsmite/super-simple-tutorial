@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+<body>
+  <button>hello</button>
+  <button class="js-button">Second button</button>
+
+  <button class="js-button-9a">9a</button>
+
+  <div class="head-tail">
+    <h1>Heads or Tails</h1>
+    <button class="heads" onclick="tossCoin('heads')">heads</button>
+    <button class="tails" onclick="tossCoin('tails')">tails</button>
+    <p class="js-chose"></p>
+  </div>
+
+  <div>
+    <h1>Input Exercise</h1>
+    <input type="text" class="js-input" onkeydown="handleKeyDown(event)">
+    <button class="js-submit" onclick="displayText()">Submit</button>
+  </div>
+
+  <script>
+    console.log(document.querySelector('button').innerHTML);
+
+    document.querySelector('button').innerHTML = 'Changed';
+
+    const buttonElement = document.querySelector('.js-button');
+
+    console.log(buttonElement);
+
+    const buttonElement2 = document.querySelector('.js-button-9a');
+    console.log(buttonElement2);
+
+    buttonElement2.innerHTML='9b done!';
+
+    function tossCoin(option){
+      let choseElement = document.querySelector('.js-chose');
+      if (option === 'heads'){
+        choseElement.innerHTML = 'You chose: heads';
+      } else if(option === 'tails'){
+        choseElement.innerHTML = 'You chose: tails';
+      }
+    }
+
+    function displayText(){
+      let value = document.querySelector('.js-input').value;
+      console.log(value);
+    }
+
+    function handleKeyDown(event){
+      if(event.key ==='Enter'){
+        displayText();
+      }
+    }
+
+
+    // console.log(document.title);
+    // document.title = 'Changed';
+
+    // console.log(document.body);
+    // console.log(typeof document.body);
+
+    // console.log(document.body.innerHTML);
+
+    // document.body.innerHTML = '<button>Good job!</button>';
+
+    // document.body.innerHTML = 'hello';
+    // document.title = 'Good job!';
+  </script>
+</body>
+</html>

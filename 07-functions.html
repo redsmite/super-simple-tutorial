@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Function</title>
+  </head>
+<body>
+  <script>
+    // function function1(){
+    //   console.log('hello');
+    //   console.log(2+2);
+    // }
+
+    // function1();
+
+    function calculateTax(cost, taxPercent = 0.1){
+      console.log(cost * taxPercent);
+    }
+
+    calculateTax(2000, 0.2);
+    calculateTax(5000);
+
+    function greet(name){
+      name = console.log(`Hello ${name}`) || console.log('Hi there');
+    }
+
+    greet();
+
+    function convertToFahrenheit(celsius){
+      let fahrenheit = (celsius * 9/5) + 32;
+      return fahrenheit;
+    }
+
+    function convertToCelsius(fahrenheit){
+      let celsius = (fahrenheit -32)* 5/9;
+      return celsius;
+    }
+
+    console.log(convertToFahrenheit(25));
+    console.log(convertToCelsius(83));
+
+    function convertLength(length, from, to){
+
+      let result = '';
+
+      if (from != 'km' && from != 'miles' && from !='ft'){
+        result = `Invalid Unit: ${from}`;
+        return result;
+      }
+
+      if (to != 'km' && to !='miles' && to !='ft'){
+        result = `Invalid Unit: ${to}`;
+        return result;
+      }
+
+      if(from =='miles' && to =='km'){
+        result = length * 1.6;
+        result = `${result} km`;
+      } else if (from == 'km' && to == 'miles'){
+        result = length * (1 / 1.6);
+        result = `${result} miles`;
+
+      } else if (from == 'km' && to == 'km'){
+        result = `${length} km`;
+      } else if (from == 'miles' && to == 'ft'){
+        result = length * 5280;
+        result = `${result} ft`;
+      } else if (from == 'km' && to == 'ft'){
+        result = length * 3281;
+        result = `${result} ft`;
+      }
+
+      return result;
+    }
+
+    console.log(convertLength(50, 'miles', 'km'));
+
+    console.log(convertLength(32, 'km', 'miles'));
+
+    console.log(convertLength(50,'km','km'));
+
+    console.log(convertLength(5,'miles','km'));
+
+    console.log(convertLength(5, 'miles', 'ft'));
+
+    console.log(convertLength(5 , 'km', 'ft'));
+
+    console.log(convertLength(5 , 'km', 'lbs'));
+
+  </script>
+</body>
+</html>
