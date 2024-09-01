@@ -11,7 +11,7 @@ function testClassList(){
 function clickToggle(className){
   let button = document.querySelector(`.${className}`);
 
-  if (button && button.classList.contains('is-toggled')) {
+  if (button.classList.contains('is-toggled')) {
     button.classList.remove('is-toggled');
   } else {
     button.classList.add('is-toggled');
